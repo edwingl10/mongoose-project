@@ -4,8 +4,15 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true, u
 
 //blueprint
 const fruitSchema = new mongoose.Schema({
-    name: String, 
-    rating: Number, 
+    name: {
+        name: String, 
+        required: [true, "Please check your data entry, no name specified!"]
+    },
+    rating: {
+        type: Number, 
+        min: 1,
+        max: 10
+    }, 
     review: String
 });
 
@@ -13,11 +20,11 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 const fruit = new Fruit({
     name: "Apple",
-    rating: 7, 
+    rating: 34, 
     review: "Pretty solid as a fruit."
 });
 
-///fruit.save();
+//fruit.save();
 
 const personSchema = new mongoose.Schema({
     name:String, 
@@ -33,6 +40,7 @@ const person = new Person({
 
 //person.save();
 
+/*
 const kiwi = new Fruit({
     name: "Kiwi", 
     score: 10,
@@ -51,6 +59,7 @@ const banana = new Fruit({
     review: "Weird texture"
 });
 
+
 Fruit.insertMany([kiwi, orange, banana], function(err){
     if(err){
         console.log(err);
@@ -59,3 +68,20 @@ Fruit.insertMany([kiwi, orange, banana], function(err){
         console.log("Successfully saved all fruits to fruitsDB");
     }
 }); 
+*/
+
+
+//read from database
+Fruit.find(function(err, fruits){
+    if(err){
+        console.log(err);
+    }
+    else{
+        mongoose.connection.close();
+        
+        fruits.forEach(fruit => {
+            console.log(fruit.name);
+        });
+    }
+});
+
