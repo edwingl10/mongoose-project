@@ -1,0 +1,22 @@
+{
+  "name": "mongoose-project",
+  "version": "1.0.0",
+  "description": "simple web project to learn about using mongoose.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwingl10/mongoose-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwingl10/mongoose-project/issues"
+  },
+  "homepage": "https://github.com/edwingl10/mongoose-project#readme",
+  "dependencies": {
+    "mongoose": "^5.9.28"
+  }
+}
