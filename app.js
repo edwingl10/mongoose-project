@@ -85,3 +85,32 @@ Fruit.find(function(err, fruits){
     }
 });
 
+/*
+Fruit.updateOne({_id: "5bcasd231298asd"}, {name: "Peach"}, function(err){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Successfully updated the document.");
+    }
+})
+
+
+Fruit.deleteOne({name: "Peach"}, function(err){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Successfully deleted the document.");
+    }
+});
+
+Person.deleteMany({name: "John"}, function(err){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Successfully deleted all the documents.");
+    }
+});
+*/
